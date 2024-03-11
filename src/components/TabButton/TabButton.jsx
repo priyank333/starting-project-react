@@ -1,5 +1,14 @@
-export default function TabButton({children, onClickHandle, isActive}) {
-    return <li>
-        <button className={isActive ? "active" : undefined} onClick={onClickHandle}>{children}</button>
+export default function TabButton({
+  children,
+  onClickHandle,
+  isActive,
+  ...props
+}) {
+  return (
+    <li>
+      <button className={isActive ? "active" : undefined} {...props}>
+        {children}
+      </button>
     </li>
+  );
 }
