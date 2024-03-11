@@ -27,6 +27,7 @@ export default function Examples() {
       <Section id="examples">
         <h2>Examples</h2>
         <Tabs
+          ButtonsContainer="menu"
           buttons={
             <>
               <TabButton
@@ -55,7 +56,7 @@ export default function Examples() {
               </TabButton>
             </>
           }
-          content={tabContent}
+          children={tabContent}
         />
       </Section>
     </main>
