@@ -2,6 +2,7 @@ import { useState } from "react";
 import TabButton from "../../components/TabButton/TabButton";
 import { EXAMPLES } from "../../data";
 import Section from "../Section/Section";
+import Tabs from "../Tabs/Tabs";
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState(null);
   let tabContent =
@@ -25,33 +26,37 @@ export default function Examples() {
     <main>
       <Section id="examples">
         <h2>Examples</h2>
-        <menu>
-          <TabButton
-            isActive={selectedTopic === "components"}
-            onClick={() => handleSelect("components")}
-          >
-            Components
-          </TabButton>
-          <TabButton
-            isActive={selectedTopic === "jsx"}
-            onClick={() => handleSelect("jsx")}
-          >
-            JSX
-          </TabButton>
-          <TabButton
-            isActive={selectedTopic === "props"}
-            onClick={() => handleSelect("props")}
-          >
-            Props
-          </TabButton>
-          <TabButton
-            isActive={selectedTopic === "state"}
-            onClick={() => handleSelect("state")}
-          >
-            State
-          </TabButton>
-        </menu>
-        {tabContent}
+        <Tabs
+          buttons={
+            <>
+              <TabButton
+                isActive={selectedTopic === "components"}
+                onClick={() => handleSelect("components")}
+              >
+                Components
+              </TabButton>
+              <TabButton
+                isActive={selectedTopic === "jsx"}
+                onClick={() => handleSelect("jsx")}
+              >
+                JSX
+              </TabButton>
+              <TabButton
+                isActive={selectedTopic === "props"}
+                onClick={() => handleSelect("props")}
+              >
+                Props
+              </TabButton>
+              <TabButton
+                isActive={selectedTopic === "state"}
+                onClick={() => handleSelect("state")}
+              >
+                State
+              </TabButton>
+            </>
+          }
+          content={tabContent}
+        />
       </Section>
     </main>
   );
