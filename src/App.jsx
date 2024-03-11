@@ -8,8 +8,10 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <CoreConcepts />
-      <Examples />
+      <main>
+        <CoreConcepts />
+        <Examples />
+      </main>
     </Fragment> //alternative to Fragment, we can use <> </> brackets.
   );
 }
